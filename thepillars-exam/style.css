@@ -3,3 +3,15 @@
 *{
     font-family: "Inter";
 }
+
+#playerchoice, #enemychoice {
+    font-size: 4rem;
+}
+
+#submit:hover {
+    background-color: #6b6a6c;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+    background-color: #b6b6b6;
+}

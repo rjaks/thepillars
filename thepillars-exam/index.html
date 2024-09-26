@@ -16,7 +16,7 @@
         </header>
         
         <div class="container m-5">
-            <div class=row>
+            <div class="row">
                 <div class="col">
                     <span class="fw-bold">Player Score</span>
                 </div>
@@ -24,7 +24,7 @@
                     <span class="fw-bold">Enemy Score</span>
                 </div>
             </div>
-            <div class=row>
+            <div class="row">
                 <div class="col">
                     <p id='userscore'></p>
                 </div>
@@ -32,21 +32,27 @@
                     <p id="opponentscore"></p>
                 </div>
             </div>
+            <div class="container border border-2 border-dark rounded py-5">
+                <span id="playerchoice"></span>
+                <span class="fw-bold fs-1 mx-5">VS</span>
+                <span id="enemychoice"></span>
+            </div>
+            
         </div>
 
         <div class="container m-5">
-            <span id="choice"></span>
+            <span id="choice">Choose among the options.</span>
             <span id="result" class="fw-bold"></span>
         </div>
 
         <div class="container">
-            <button id="rock" class="btn btn-light border-1 border-dark p-5" onclick="chooseRock()">Rock</button>
-            <button id="paper" class="btn btn-light border-1 border-dark p-5 mx-5" onclick="choosePaper()">Paper</button>
-            <button id="scissors" class="btn btn-light border-1 border-dark p-5" onclick="chooseScissors()">Scissors</button>
+            <button id="rock" class="btn btn-light border-1 border-dark px-5 py-3" onclick="chooseRock()">Rock</button>
+            <button id="paper" class="btn btn-light border-1 border-dark px-5 py-3 mx-5" onclick="choosePaper()">Paper</button>
+            <button id="scissors" class="btn btn-light border-1 border-dark px-5 py-3" onclick="chooseScissors()">Scissors</button>
         </div>
         
         <div class="container m-5">
-            <button value="submit" type="submit" class="btn btn-dark border-1 border-dark" onclick="Generate()">Submit</button>
+            <button value="submit" type="submit" id="submit" class="btn btn-dark border-1 border-dark px-5" onclick="Generate()">Submit</button>
         </div>
     </div>
     <script src="script.js"></script>

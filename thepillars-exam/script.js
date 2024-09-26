@@ -7,6 +7,8 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const playerscore = document.getElementById("userscore");
+const playerchoice = document.getElementById("playerchoice");
+const enemychoice = document.getElementById("enemychoice");
 const enemyscore = document.getElementById("opponentscore");
 const choice = document.getElementById('choice');
 const result = document.getElementById('result');
@@ -14,41 +16,56 @@ const result = document.getElementById('result');
 playerscore.innerHTML = userscore;
 enemyscore.innerHTML = opponentscore;
 
+playerchoice.innerHTML = '?'
+enemychoice.innerHTML = '?'
+
+
 function chooseRock(){
     result.innerHTML = ''
     userchoice = "Rock";
-    document.getElementById("choice").innerHTML = "You have selected Rock. Continue?";
+    playerchoice.innerHTML = '🤜'
+    enemychoice.innerHTML = '?'
+    document.getElementById("choice").innerHTML = "You have selected <b>Rock</b>.<br>Continue?";
+    
 
-    rock.className = 'btn btn-dark border-1 border-secondary p-5'
-    paper.className = 'btn btn-light border-1 border-dark p-5 mx-5'
-    scissors.className = 'btn btn-light border-1 border-dark p-5'
+    rock.className = 'btn btn-secondary border-1 border-secondary px-5 py-3'
+    paper.className = 'btn btn-light border-1 border-dark px-5 py-3 mx-5'
+    scissors.className = 'btn btn-light border-1 border-dark px-5 py-3'
 }
 
 function choosePaper(){
     result.innerHTML = ''
     userchoice = "Paper";
-    document.getElementById("choice").innerHTML = "You have selected Paper. Continue?";
+    playerchoice.innerHTML = '✋'
+    enemychoice.innerHTML = '?'
+    document.getElementById("choice").innerHTML = "You have selected <b>Paper</b>.<br>Continue?";
 
-    paper.className = 'btn btn-dark border-1 border-secondary p-5 mx-5'
-    rock.className = 'btn btn-light border-1 border-dark p-5'
-    scissors.className = 'btn btn-light border-1 border-dark p-5'
+    paper.className = 'btn btn-secondary border-1 border-secondary px-5 py-3 mx-5'
+    rock.className = 'btn btn-light border-1 border-dark px-5 py-3'
+    scissors.className = 'btn btn-light border-1 border-dark px-5 py-3'
 }
 
 function chooseScissors(){
     result.innerHTML = ''
     userchoice = "Scissors";
-    document.getElementById("choice").innerHTML = "You have selected Scissors. Continue?";
+    playerchoice.innerHTML = '✌️'
+    enemychoice.innerHTML = '?'
+    document.getElementById("choice").innerHTML = "You have selected <b>Scissors</b>.<br>Continue?";
 
-    rock.className = 'btn btn-light border-1 border-secondary p-5'
-    paper.className = 'btn btn-light border-1 border-dark p-5 mx-5'
-    scissors.className = 'btn btn-dark border-1 border-dark p-5'
+    rock.className = 'btn btn-light border-1 border-secondary px-5 py-3'
+    paper.className = 'btn btn-light border-1 border-dark px-5 py-3 mx-5'
+    scissors.className = 'btn btn-secondary border-1 border-dark px-5 py-3'
 }
 
 function Generate(){
     if (userchoice == "");
     else {
         let cpu_answer = cpu_choices[Math.floor(Math.random() * 3)];
-        choice.innerHTML = 'The enemy chose ' + cpu_answer + "!";
+
+        if (cpu_answer == 'Rock') enemychoice.innerHTML = '🤜'
+        else if (cpu_answer == 'Paper') enemychoice.innerHTML = '✋'
+        else enemychoice.innerHTML = '✌️'
+        choice.innerHTML = 'The enemy chose <b>' + cpu_answer + "</b>!";
 
         if (cpu_answer == userchoice){
             result.innerHTML = '<br>It\'s a tie!'
@@ -78,9 +95,9 @@ function Generate(){
             opponentscore++
         }
 
-        rock.className = 'btn btn-light border-1 border-secondary p-5'
-        paper.className = 'btn btn-light border-1 border-secondary p-5 mx-5'
-        scissors.className = 'btn btn-light border-1 border-secondary p-5'
+        rock.className = 'btn btn-light border-1 border-secondary px-5 py-3'
+        paper.className = 'btn btn-light border-1 border-secondary px-5 py-3 mx-5'
+        scissors.className = 'btn btn-light border-1 border-secondary px-5 py-3'
         userchoice = "";
         playerscore.innerHTML = userscore;
         enemyscore.innerHTML = opponentscore;
