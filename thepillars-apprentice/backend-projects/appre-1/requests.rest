@@ -1,0 +1,54 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNzMxOTA3NjQwLCJleHAiOjE3MzE5MDc2NTV9.iB6DuEa0LuuZawMUIp34L9lA63MLaN8MQ01Habf8JgU
+
+###
+
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNzMxOTA3NTcyfQ.U9C9WA64fu2lFAYGgzCjYqZ1gTY5vxLxv-aJM5-R-8M"
+}
+
+###
+
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{ 
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNzMxOTA3NTcyfQ.U9C9WA64fu2lFAYGgzCjYqZ1gTY5vxLxv-aJM5-R-8M"
+}
+
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json 
+
+
+{
+    "username": "Jim"
+}
+
+
+###
+GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Adrian",
+    "password": "meow"
+}
+
+###
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "name": "Adrian",   
+    "password": "meow"
+}
